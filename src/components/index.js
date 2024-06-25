@@ -1,4 +1,7 @@
-export * from "./MovieCast/MovieCast";
 export * from "./MovieList/MovieList";
-export * from "./MovieReviews/MovieReviews";
 export * from "./Navigation/Navigation";
+export * from "./Layout";
+// export * from "./Reviews/Reviews";
+// export * from "./Cast/Cast";
+export * from "./MoviesItems/MoviesItems";
+export * from "./MoviesSearch/MoviesSearch";
