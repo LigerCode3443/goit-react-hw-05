@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getMovies } from "../../services/moviesApi";
-import { MovieList } from "components";
+import { MovieList, Container } from "components";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -21,10 +21,12 @@ const HomePage = () => {
     getData();
   }, []);
   return (
-    <div>
-      <h1>Trending Day</h1>
+    <Container>
+      <h1 className="text-center text-3xl py-3 font-bold shadow-lg">
+        Trending Day
+      </h1>
       <MovieList movies={movies} />
-    </div>
+    </Container>
   );
 };
 

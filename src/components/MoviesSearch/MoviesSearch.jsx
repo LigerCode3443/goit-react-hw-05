@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { Container } from "../Container/Container";
 
 export const MoviesSearch = ({ onSearchMovie }) => {
   const { register, handleSubmit, reset } = useForm();
@@ -15,11 +16,21 @@ export const MoviesSearch = ({ onSearchMovie }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="search" {...register("query")} placeholder="Search..." />
-        <button>Search Movie</button>
+    <Container>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex gap-5 justify-center items-center p-8"
+      >
+        <input
+          type="search"
+          {...register("query")}
+          placeholder="Search..."
+          className="border-black border-1 border-solid p-3 "
+        />
+        <button className="border-black border-1 border-solid rounded p-2">
+          Search Movie
+        </button>
       </form>
-    </div>
+    </Container>
   );
 };

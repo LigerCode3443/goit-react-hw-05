@@ -4,7 +4,7 @@ export const MoviesItems = ({ movies }) => {
   return (
     <>
       {movies.map((mov) => (
-        <li key={mov.id}>
+        <li key={mov.id} className="shadow-lg p-6 text-center text-xl ">
           <Link to={`/movies/${mov.id}`} state={location}>
             {mov.title}
           </Link>

@@ -5,3 +5,4 @@ export * from "./Layout";
 // export * from "./Cast/Cast";
 export * from "./MoviesItems/MoviesItems";
 export * from "./MoviesSearch/MoviesSearch";
+export * from "./Container/Container";

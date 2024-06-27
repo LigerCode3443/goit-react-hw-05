@@ -4,7 +4,7 @@ import "./App.css";
 import { Layout } from "components/Layout";
 
 import { Toaster } from "react-hot-toast";
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import HomePage from "./pages/HomePage/HomePage";
 import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage";
 import MoviesPage from "./pages/MoviesPage/MoviesPage";
