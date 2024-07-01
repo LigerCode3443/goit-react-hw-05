@@ -2,10 +2,10 @@ import { MoviesSearch } from "components";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getSearchMovies } from "../../services/moviesApi";
-import { MovieList } from "../../components";
+import { Loader, MovieList } from "../../components";
 import toast from "react-hot-toast";
 
-const MoviesPage = () => {
+export const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(false);
@@ -40,8 +40,13 @@ const MoviesPage = () => {
   return (
     <>
       <MoviesSearch onSearchMovie={onSearchMovie} />
-      <MovieList movies={movies} />
+      {isLoading && <Loader />}
+      {movies.length > 0 && <MovieList movies={movies} />}
+      {error && (
+        <p className="text-center text-3xl py-3 font-bold shadow-lg">
+          {error.massage}
+        </p>
+      )}
     </>
   );
 };
-export default MoviesPage;

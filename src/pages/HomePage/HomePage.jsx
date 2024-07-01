@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getMovies } from "../../services/moviesApi";
-import { MovieList, Container } from "components";
+import { MovieList, Container, Loader } from "components";
 
-const HomePage = () => {
+export const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -25,9 +25,13 @@ const HomePage = () => {
       <h1 className="text-center text-3xl py-3 font-bold shadow-lg">
         Trending Day
       </h1>
-      <MovieList movies={movies} />
+      {movies.length > 0 && <MovieList movies={movies} />}
+      {isLoading && <Loader />}
+      {error && (
+        <p className="text-center text-3xl py-3 font-bold shadow-lg">
+          {error.massage}
+        </p>
+      )}
     </Container>
   );
 };
-
-export default HomePage;

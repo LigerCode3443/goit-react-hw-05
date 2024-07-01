@@ -25,9 +25,9 @@ export const MoviesSearch = ({ onSearchMovie }) => {
           type="search"
           {...register("query")}
           placeholder="Search..."
-          className="border-black border-1 border-solid p-3 "
+          className="shadow-[0px_0px_2px_2px] rounded-lg p-2"
         />
-        <button className="border-black border-1 border-solid rounded p-2">
+        <button className="shadow-[0px_0px_2px_2px] rounded-lg p-2 hover:bg-red-400">
           Search Movie
         </button>
       </form>
